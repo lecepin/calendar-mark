@@ -1,0 +1,86 @@
+.App {
+  --day-bg: #096dd9;
+  --day-boder-color: #40a9ff;
+  --day-color: #fff;
+  --day-height: 50px;
+
+  --cale-border-color: #000;
+  --cale-item-bg: #fff;
+  --cale-item-invalid-bg: #f0f0f0;
+  --cale-item-height: 50px;
+
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.dayBar {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.dayBar > div {
+  flex-basis: calc(100% / 7);
+  background-color: var(--day-bg);
+  text-align: center;
+  border: 1px solid var(--day-boder-color);
+  border-width: 1px 1px 1px 0;
+  height: var(--day-height);
+  line-height: var(--day-height);
+  color: var(--day-color);
+}
+.dayBar > div:first-child {
+  border-left: 1px solid var(--day-boder-color);
+}
+
+.cale {
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--cale-border-color);
+  border-left: 1px solid var(--cale-border-color);
+}
+.cale-item {
+  flex-basis: calc(100% / 7);
+  background-color: var(--cale-item-bg);
+  height: var(--cale-item-height);
+  line-height: var(--cale-item-height);
+  border-right: 1px solid var(--cale-border-color);
+  border-bottom: 1px solid var(--cale-border-color);
+  cursor: pointer;
+  position: relative;
+}
+.cale-invalid {
+  background-color: var(--cale-item-invalid-bg);
+  border-right: 0;
+  cursor: not-allowed;
+}
+.cale-invalid:last-child {
+  border-right: 1px solid var(--cale-border-color);
+}
+.cale-item-types,
+.cale-value {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  display: flex;
+}
+.cale-item-types > div {
+  flex-grow: 1;
+}
+.cale-value {
+  z-index: 1;
+  justify-content: center;
+  font-weight: bolder;
+  font-size: 16px;
+}
+.cale-value-current {
+  font-size: 30px;
+}
+
+.opBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
