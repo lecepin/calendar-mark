@@ -237,7 +237,7 @@ class App extends React.Component {
           ))}
           {new Array(monthDays).fill().map((_, index) => {
             const _day = index + 1;
-            const date = `${year}-${month}-${day}`;
+            const date = `${year}-${month}-${_day}`;
 
             return (
               <div
